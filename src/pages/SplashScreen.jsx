@@ -12,6 +12,20 @@ const SplashScreen = () => {
 
   const [isSplashOpen, setIsSplashOpen] = useState(true)
 
+  // Disable scrolling when splash screen is open
+  useEffect(() => {
+    if (isSplashOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    // Cleanup on component unmount
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isSplashOpen]);
+
   useGSAP(() => {
     const tl = gsap.timeline();
     tl.from(bgCircleRef.current, {
