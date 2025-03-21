@@ -7,8 +7,10 @@ const Layout = () => {
   return (
     <>
       <Header />
-      <Outlet />
-      <Footer />
+      <div className="max-w-[75rem] mx-auto px-5 sm:px-[3%]">
+        <Outlet />
+      </div>
+      {/* <Footer /> */}
     </>
   )
 }

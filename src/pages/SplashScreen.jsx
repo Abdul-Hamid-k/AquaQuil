@@ -70,8 +70,8 @@ const SplashScreen = () => {
 
 
   return (
-    <div ref={splashScreenRef} className='fixed'>
-      <div className="z-[8] fixed translate-x-40 h-screen w-screen bg-secondary-g"></div>
+    <div ref={splashScreenRef} className='fixed z-100'>
+      <div className="z-[8] fixed translate-x-30 h-screen w-screen bg-secondary-g"></div>
       <div className=" z-[10] fixed translate-x-20 h-screen w-screen bg-primary-g"></div>
       <div className='z-[20]  h-screen w-screen fixed bg-white flex justify-center items-center'>
         <div ref={bgCircleRef} className="bg-primary-g rounded-full h-[10rem] w-[10rem] sm:h-[20rem] sm:w-[20rem]"></div>
