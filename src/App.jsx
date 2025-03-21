@@ -6,18 +6,17 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Products from './pages/Products'
 import SplashScreen from './pages/SplashScreen'
+import Layout from './pages/Layout'
 
 const router = createBrowserRouter([{
   path: '/',
-  element: <Home />
-}, {
-  path: '/about',
-  element: <About />
-}, {
-  path: '/products',
-  element: <Products />
-}
-])
+  element: <Layout />,
+  children: [
+    { path: '/', element: <Home /> },
+    { path: '/about', element: <About /> },
+    { path: '/products', element: <Products /> },
+  ]
+}])
 
 
 const App = () => {
