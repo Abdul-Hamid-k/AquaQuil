@@ -89,7 +89,7 @@ const SplashScreen = () => {
           className='absolute bottom-5 cursor-pointer'
           onClick={() => setIsSplashOpen(false)} >
           Explore
-          <i class="ri-send-plane-fill fill-primary-g"></i>
+          <i className="ri-send-plane-fill fill-primary-g"></i>
         </p>
       </div>
     </div>
