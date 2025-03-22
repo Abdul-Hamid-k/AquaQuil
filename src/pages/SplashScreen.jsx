@@ -73,10 +73,10 @@ const SplashScreen = () => {
     <div ref={splashScreenRef} className='fixed z-100'>
       <div className="z-[8] fixed translate-x-30 h-screen w-screen bg-secondary-g"></div>
       <div className=" z-[10] fixed translate-x-20 h-screen w-screen bg-primary-g"></div>
-      <div className='z-[20]  h-screen w-screen fixed bg-white flex justify-center items-center'>
-        <div ref={bgCircleRef} className="bg-primary-g rounded-full h-[10rem] w-[10rem] sm:h-[20rem] sm:w-[20rem]"></div>
+      <div className='z-[20]   h-screen w-screen fixed bg-white flex justify-center items-center'>
+        <div ref={bgCircleRef} onClick={() => setIsSplashOpen(false)} className="bg-primary-g rounded-full h-[10rem] w-[10rem] sm:h-[20rem] sm:w-[20rem]"></div>
         <div className="absolute flex overflow-hidden leading-none">
-          <p ref={e => { textMainRef = e }} className='text-[3.5rem] font-medium select-none sm:text-[10rem] md:text-[11rem] capitalize'>
+          <p onClick={() => setIsSplashOpen(false)} ref={e => { textMainRef = e }} className='text-[3.5rem] font-medium select-none sm:text-[10rem] md:text-[11rem] capitalize'>
             {"ESSENCE".split("").map((char, index) => (
               <span key={index} className='inline-block'>
                 {char}
