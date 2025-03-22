@@ -25,10 +25,10 @@ const Home = () => {
         <button className='px-5 py-2 cursor-pointer rounded-full bg-primary-g text-white mt-5'>Contact Us <i className="ri-arrow-right-line"></i></button>
       </div>
 
-      <div className="select-none mx-3 mt-25 sm:mt-0">
+      <div className="select-none -z-10 mx-3 mt-25 sm:mt-0">
         <div className="relative ">
 
-          <div className="absolute z-10 -right-5  sm:right-15 -top-15 w-[10rem] h-[30rem]">
+          <div className="absolute z-1 -right-5  sm:right-15 -top-15 w-[10rem] ">
             <RotatingCircleText />
           </div>
 
@@ -37,13 +37,13 @@ const Home = () => {
 
             <div className="relative">
               <img
-                className='rounded-[13rem] h-[60vw] sm:h-[24rem] w-[100vw] sm:w-[90%] object-cover z-0'
+                className='rounded-[13rem] h-[60vw] sm:h-[24rem] w-[100vw] sm:w-[90%] object-cover'
                 src="https://images.unsplash.com/photo-1607284170102-f09142a2c733?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="" />
 
 
             </div>
-            <div className="h-[60vw] sm:h-[24rem] w-[80vw] sm:w-[90%] border-4 border-primary-g/40 -z-10 rounded-[13rem] absolute top-5 -left-3 sm:-left-5"></div>
+            <div className="h-[60vw] sm:h-[24rem] w-[80vw] sm:w-[90%] border-4 border-primary-g/40 -z-1 rounded-[13rem] absolute top-5 -left-3 sm:-left-5"></div>
           </div>
 
         </div>

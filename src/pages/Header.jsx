@@ -73,7 +73,7 @@ const Header = () => {
       </nav>
 
       {/* mobile view */}
-      <nav className={`${isNavMenuOpen ? 'translate-x-0' : '-translate-x-full'} sm:-translate-full transition-all duration-300 absolute w-[80%] bg-white/90 backdrop-blur top-0 h-screen pt-16`}>
+      <nav className={`${isNavMenuOpen ? 'translate-x-0' : '-translate-x-full'} sm:-translate-full transition-all duration-300 absolute w-[80%] bg-white/60 backdrop-blur top-0 h-screen pt-16`}>
 
         <i className="ri-close-fill text-2xl absolute top-8 right-8 text-red-500 cursor-pointer font-medium" onClick={() => { setIsNavMenuOpen(false) }}></i>
 
@@ -84,8 +84,8 @@ const Header = () => {
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? 'text-primary-g font-medium'
-                  : 'text-gray-700 hover:text-gray-900 font-medium'
+                  ? 'text-primary-g font-medium text-2xl'
+                  : 'text-gray-700 hover:text-gray-900 text-lg font-medium'
               }
             >
               Home
@@ -97,8 +97,8 @@ const Header = () => {
               to="/products"
               className={({ isActive }) =>
                 isActive
-                  ? 'text-primary-g font-medium'
-                  : 'text-gray-700 hover:text-gray-900 font-medium'
+                  ? 'text-primary-g font-medium text-2xl'
+                  : 'text-gray-700 hover:text-gray-900 text-lg font-medium'
               }
             >
               Products
@@ -110,8 +110,8 @@ const Header = () => {
               to="/about"
               className={({ isActive }) =>
                 isActive
-                  ? 'text-primary-g font-medium'
-                  : 'text-gray-700 hover:text-gray-900 font-medium'
+                  ? 'text-primary-g font-medium text-2xl'
+                  : 'text-gray-700 hover:text-gray-900 text-lg font-medium'
               }
             >
               About
