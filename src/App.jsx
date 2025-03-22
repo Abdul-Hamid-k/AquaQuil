@@ -8,6 +8,13 @@ import Products from './pages/Products'
 import SplashScreen from './pages/SplashScreen'
 import Layout from './pages/Layout'
 
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react';
+import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+
+gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(MotionPathPlugin)
+
 const router = createBrowserRouter([{
   path: '/',
   element: <Layout />,

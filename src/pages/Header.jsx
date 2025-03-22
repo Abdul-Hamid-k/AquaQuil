@@ -15,7 +15,7 @@ const Header = () => {
 
       {/* desktop view */}
       <nav className="grid grid-cols-3 items-center justify-items-center ">
-        <i class="sm:hidden text-2xl ri-menu-4-line justify-self-start cursor-pointer" onClick={() => { setIsNavMenuOpen(true) }}></i>
+        <i className="sm:hidden text-2xl ri-menu-4-line justify-self-start cursor-pointer" onClick={() => { setIsNavMenuOpen(true) }}></i>
         {/* Left Navigation Items */}
         <ul className="hidden justify-self-start sm:flex gap-8">
           <li>
@@ -75,7 +75,7 @@ const Header = () => {
       {/* mobile view */}
       <nav className={`${isNavMenuOpen ? 'translate-x-0' : '-translate-x-full'} sm:-translate-full transition-all duration-300 absolute w-[80%] bg-white/90 backdrop-blur top-0 h-screen pt-16`}>
 
-        <i class="ri-close-fill text-2xl absolute top-8 right-8 text-red-500 cursor-pointer font-medium" onClick={() => { setIsNavMenuOpen(false) }}></i>
+        <i className="ri-close-fill text-2xl absolute top-8 right-8 text-red-500 cursor-pointer font-medium" onClick={() => { setIsNavMenuOpen(false) }}></i>
 
         {/* Left Navigation Items */}
         <ul className="flex flex-col sm:hidden items-center gap-5">
