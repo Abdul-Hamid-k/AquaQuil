@@ -68,7 +68,6 @@ const SplashScreen = () => {
     }
   }, [isSplashOpen])
 
-
   return (
     <div ref={splashScreenRef} className='fixed z-100'>
       <div className="z-[8] fixed translate-x-30 h-screen w-screen bg-secondary-g"></div>
@@ -86,7 +85,7 @@ const SplashScreen = () => {
         </div>
         <p
           ref={exploreRef}
-          className='absolute bottom-5 cursor-pointer'
+          className='absolute bottom-15 text-xl cursor-pointer'
           onClick={() => setIsSplashOpen(false)} >
           Explore
           <i className="ri-send-plane-fill fill-primary-g"></i>
