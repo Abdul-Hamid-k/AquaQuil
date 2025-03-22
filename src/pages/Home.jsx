@@ -25,10 +25,10 @@ const Home = () => {
         <button className='px-5 py-2 cursor-pointer rounded-full bg-primary-g text-white mt-5'>Contact Us <i className="ri-arrow-right-line"></i></button>
       </div>
 
-      <div className="select-none">
-        <div className="relative mx-3">
+      <div className="select-none mx-3 mt-25 sm:mt-0">
+        <div className="relative ">
 
-          <div className="absolute z-10 right-15 -top-15 w-[10rem] h-[30rem]">
+          <div className="absolute z-10 -right-5  sm:right-15 -top-15 w-[10rem] h-[30rem]">
             <RotatingCircleText />
           </div>
 
