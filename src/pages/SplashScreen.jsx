@@ -45,7 +45,7 @@ const SplashScreen = () => {
 
     tl.from(exploreRef.current, {
       opacity: 0,
-      duration: 1,
+      duration: 5,
       y: 20,
       ease: 'elastic.out'
     })
@@ -69,27 +69,31 @@ const SplashScreen = () => {
   }, [isSplashOpen])
 
   return (
-    <div ref={splashScreenRef} className='fixed z-100'>
-      <div className="z-[8] fixed translate-x-30 h-screen w-screen bg-secondary-g"></div>
-      <div className=" z-[10] fixed translate-x-20 h-screen w-screen bg-primary-g"></div>
-      <div className='z-[20]   h-screen w-screen fixed bg-white flex justify-center items-center'>
-        <div ref={bgCircleRef} onClick={() => setIsSplashOpen(false)} className="bg-primary-g rounded-full h-[10rem] w-[10rem] sm:h-[20rem] sm:w-[20rem]"></div>
-        <div className="absolute flex overflow-hidden leading-none">
-          <p onClick={() => setIsSplashOpen(false)} ref={e => { textMainRef = e }} className='text-[3.5rem] font-medium select-none sm:text-[10rem] md:text-[11rem] capitalize'>
-            {"ESSENCE".split("").map((char, index) => (
-              <span key={index} className='inline-block'>
-                {char}
-              </span>
-            ))}
+    <div ref={splashScreenRef} className='fixed z-100 top-0 left-0'>
+      <div className="overflow-hidden w-screen">
+        <div className="z-[8] fixed left-20 h-screen w-screen bg-secondary-g"></div>
+        <div className=" z-[10] fixed left-10 h-screen w-screen bg-primary-g"></div>
+        <div className='z-[20] h-screen w-screen fixed bg-white flex justify-center items-center'>
+          <div ref={bgCircleRef}
+            onClick={() => setIsSplashOpen(false)} className="bg-primary-g rounded-full h-[10rem] w-[10rem] sm:h-[20rem] sm:w-[20rem]"></div>
+
+          <div className="absolute flex overflow-hidden leading-none">
+            <p onClick={() => setIsSplashOpen(false)} ref={e => { textMainRef = e }} className='text-[3.5rem] font-medium select-none sm:text-[10rem] md:text-[11rem] capitalize'>
+              {"ESSENCE".split("").map((char, index) => (
+                <span key={index} className='inline-block'>
+                  {char}
+                </span>
+              ))}
+            </p>
+          </div>
+          <p
+            ref={exploreRef}
+            className='absolute bottom-15 text-xl cursor-pointer'
+            onClick={() => setIsSplashOpen(false)} >
+            Explore
+            <i className="ri-send-plane-fill fill-primary-g"></i>
           </p>
         </div>
-        <p
-          ref={exploreRef}
-          className='absolute bottom-15 text-xl cursor-pointer'
-          onClick={() => setIsSplashOpen(false)} >
-          Explore
-          <i className="ri-send-plane-fill fill-primary-g"></i>
-        </p>
       </div>
     </div>
   )
