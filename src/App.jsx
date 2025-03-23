@@ -11,9 +11,12 @@ import Layout from './pages/Layout'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import AppContext from './context/AppContext'
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(MotionPathPlugin)
+gsap.registerPlugin(ScrollTrigger)
 
 const router = createBrowserRouter([{
   path: '/',
@@ -28,10 +31,10 @@ const router = createBrowserRouter([{
 
 const App = () => {
   return (
-    <>
+    <AppContext>
       <SplashScreen />
       <RouterProvider router={router} />
-    </>
+    </AppContext>
   )
 }
 
