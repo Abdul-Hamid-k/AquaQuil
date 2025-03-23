@@ -17,13 +17,13 @@ const Header = () => {
       <nav className="grid grid-cols-3 items-center justify-items-center ">
         <i className="sm:hidden text-2xl ri-menu-4-line justify-self-start cursor-pointer" onClick={() => { setIsNavMenuOpen(true) }}></i>
         {/* Left Navigation Items */}
-        <ul className="hidden justify-self-start sm:flex gap-8">
+        <ul className="hidden justify-self-start sm:flex gap-8 text-[1rem]">
           <li>
             <NavLink
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? 'text-primary-g font-medium'
+                  ? 'text-primary-g font-bold'
                   : 'text-gray-700 hover:text-gray-900 font-medium'
               }
             >
@@ -36,7 +36,7 @@ const Header = () => {
               to="/products"
               className={({ isActive }) =>
                 isActive
-                  ? 'text-primary-g font-medium'
+                  ? 'text-primary-g font-bold'
                   : 'text-gray-700 hover:text-gray-900 font-medium'
               }
             >
@@ -49,7 +49,7 @@ const Header = () => {
               to="/about"
               className={({ isActive }) =>
                 isActive
-                  ? 'text-primary-g font-medium'
+                  ? 'text-primary-g font-bold'
                   : 'text-gray-700 hover:text-gray-900 font-medium'
               }
             >
@@ -84,7 +84,7 @@ const Header = () => {
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? 'text-primary-g font-medium text-2xl'
+                  ? 'text-primary-g font-bold text-2xl'
                   : 'text-gray-700 hover:text-gray-900 text-lg font-medium'
               }
             >
@@ -97,7 +97,7 @@ const Header = () => {
               to="/products"
               className={({ isActive }) =>
                 isActive
-                  ? 'text-primary-g font-medium text-2xl'
+                  ? 'text-primary-g font-bold text-2xl'
                   : 'text-gray-700 hover:text-gray-900 text-lg font-medium'
               }
             >
@@ -110,7 +110,7 @@ const Header = () => {
               to="/about"
               className={({ isActive }) =>
                 isActive
-                  ? 'text-primary-g font-medium text-2xl'
+                  ? 'text-primary-g font-bold text-2xl'
                   : 'text-gray-700 hover:text-gray-900 text-lg font-medium'
               }
             >
