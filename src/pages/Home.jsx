@@ -28,7 +28,7 @@ const Home = () => {
       <div className="select-none -z-10 mx-3 mt-25 sm:mt-0">
         <div className="relative ">
 
-          <div className="absolute z-1 -right-5  sm:right-15 -top-15 w-[10rem] ">
+          <div className="absolute z-1 -right-0  sm:right-15 -top-15 w-[10rem] ">
             <RotatingCircleText />
           </div>
 
