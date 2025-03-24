@@ -22,38 +22,21 @@ const Home = () => {
         y: 100,
         duration: 1.5,
         opacity: 0,
-        stagger: 0.1,
+        stagger: 0.3,
         delay: 0.3,
-        // scrollTrigger: {
-        //   trigger: heroTextRef,
-        //   scroller: 'body',
-        //   start: 'top 80%',
-        //   end: 'top 70%',
-        //   markers: true
-        // }
       })
     }
   }, [isSplashScreenOpen])
+  console.log(heroTextRef)
 
   return (
-    // <div className='grid grid-cols-3 gap-15 items-end'>
-    //   <div className=''>
-    //     <h2 className='font-medium text-6xl'>Mineral Water Bottle</h2>
-    //     <p className='mt-4 text-gray-600 text-sm'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At cumque libero aliquid a molestias tempora ab. Unde libero totam aperiam?</p>
 
-    //     <button className='px-3 py-1 rounded-lg bg-primary-g text-white mt-5'>Contact Us</button>
-    //   </div>
-
-    //   <div className="items-self-start h-[70vh] ">
-    //     <div className="w-full h-full bg-red-500 rounded-t-full"></div>
-    //   </div>
-    // </div>
 
     <div className="flex flex-col sm:grid sm:grid-cols-2 gap-10 sm:gap-3 h-[calc(100vh-5rem)] items-center">
       <div className="order-1 sm:order-0 -z-2">
         <h2 ref={e => heroTextRef = e} className='text-5xl sm:text-5xl md:text-7xl font-medium font-hero -z-1 overflow-hidden'>
-          {data.home.heroMainText.split(' ').map(letter => (
-            <span className='inline-block mr-5'>{letter}  </span>
+          {data.home.heroMainText.split(' ').map((letter, idx) => (
+            <span key={idx} className='inline-block mr-3'>{letter}  </span>
           ))}
         </h2>
         <p className='mt-4 text-gray-600'>Experience the freshness of crystal-clear, mineral-rich water, sourced from the heart of nature.</p>

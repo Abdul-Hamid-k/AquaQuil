@@ -73,7 +73,7 @@ const Header = () => {
       </nav>
 
       {/* mobile view */}
-      <nav className={`${isNavMenuOpen ? 'translate-x-0' : '-translate-x-full'} sm:-translate-full transition-all duration-300 absolute w-[80%] bg-white/60 backdrop-blur top-0 h-screen pt-16`}>
+      <nav className={`${isNavMenuOpen ? 'translate-x-0' : '-translate-x-full'} sm:-translate-full transition-all duration-300 absolute w-[80%] bg-white/60 backdrop-blur top-0 h-screen pt-16 z-100`}>
 
         <i className="ri-close-fill text-2xl absolute top-8 right-8 text-red-500 cursor-pointer font-medium" onClick={() => { setIsNavMenuOpen(false) }}></i>
 
