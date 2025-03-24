@@ -29,15 +29,14 @@ const Products = () => {
       })
     }
 
-    
-  }, [isSplashScreenOpen])
 
+  }, [isSplashScreenOpen])
 
   return (
     <div className="">
-      <div className='grid grid-cols-1 sm:grid-cols-3 gap-y-15 sm:gap-3 items-center mt-12'>
+      <div className=' flex flex-col sm:grid sm:grid-cols-3 gap-y-15 sm:gap-3 items-center mt-12'>
         {/* left */}
-        <div className=''>
+        <div className='w-full '>
           <h2 ref={e => productMainTextRef = e} className='font-medium text-6xl '>
             {data.products.productMainText.split(' ').map((letter, idx) => (
               <span key={idx} className='inline-block mr-3 -z-10'>{letter}  </span>
@@ -49,7 +48,7 @@ const Products = () => {
         </div>
 
         {/* center */}
-        <div className="items-self-start col-span-2 sm:col-span-1 order-first sm:order-0 h-[50vh]  sm:h-[80vh] sm:max-h-[30rem] ">
+        <div className="items-self-start sm:col-span-1 order-first sm:order-0 h-[50vh]  sm:h-[80vh] sm:max-h-[30rem] ">
           <div className="w-[90%] h-full  rounded-t-full overflow-hidden justify-self-center border-10 border-b-0 border-secondary-g">
             <img ref={productBaseImage} className="object-cover w-full h-full scale-[100%]"
               src={ProductBase} alt="Product Base" />
@@ -57,8 +56,8 @@ const Products = () => {
         </div>
 
         {/* right */}
-        <div className="w-full sm:w-[80%] items-end">
-          <div className="flex gap-8 my-8">
+        <div className="w-full sm:w-[80%] align-self-end">
+          <div className="flex gap-8 mb-8">
             <i class="ri-arrow-left-line text-3xl cursor-pointer"></i>
             <i class="ri-arrow-right-line text-3xl cursor-pointer"></i>
           </div>
