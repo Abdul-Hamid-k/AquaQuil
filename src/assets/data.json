@@ -4,7 +4,20 @@
 		"heroSubText": "Experience the freshness of crystal-clear, mineral-rich water, sourced from the heart of nature.",
 		"heroSpinnerText": "EXPERIENCE THE NATURAL FRESHNESS"
 	},
-	"products": {
-		"productMainText": "Mineral Water Bottle"
-	}
+	"products": [
+		{
+			"id": "500MLWaterBottle",
+			"productName": "500 ML Mineral Water Bottle",
+			"productAbout": "Our 500 ML Mineral Water Bottle is perfect for on-the-go hydration.",
+			"description": "500ML Description",
+			"about": "500ML About"
+		},
+		{
+			"id": "1LWaterBottle",
+			"productName": "1 L Mineral Water Bottle",
+			"productAbout": "Our 500 ML Mineral Water Bottle is perfect for on-the-go hydration.",
+			"description": "1L Description",
+			"about": "1L About"
+		}
+	]
 }
