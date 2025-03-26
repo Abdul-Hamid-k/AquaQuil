@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router'
-import { headerArc, logo } from '../assets/assets'
+import assets from '../assets/assets'
 
 const Header = () => {
 
@@ -10,7 +10,7 @@ const Header = () => {
     <header className="backdrop-blur-2x z-50 max-w-[75rem] mx-auto px-5 sm:px-[3%]">
 
       {/* <div className="absolute flex w-full left-0 top-0 h-[8rem] sm:h-[10rem] justify-center">
-        <img src={headerArc} className='w-[60%] -z-10' />
+        <img src={assets.headerArc} className='w-[60%] -z-10' />
       </div> */}
 
       {/* desktop view */}
@@ -63,7 +63,7 @@ const Header = () => {
         <div className="flex-shrink-0">
           <NavLink to="/">
             <img
-              src={logo}
+              src={assets.logo}
               alt="Logo"
               className="h-18 w-auto"
             />
