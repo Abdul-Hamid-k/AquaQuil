@@ -19,5 +19,11 @@
 			"description": "1L Description",
 			"about": "1L About"
 		}
+	],
+	"productReviews": [
+		{
+			"reviewerName": "Abdul Hamid",
+			"review": "Fresh and refreshing!!"
+		}
 	]
 }

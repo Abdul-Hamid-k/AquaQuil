@@ -1,10 +1,12 @@
 import React, { useContext, useRef, useState } from 'react'
-import ProductBase from "../assets/products_base.avif"
-import data from "../assets/data.json"
-
+import { AppDataContext } from '../context/AppContext'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import { AppDataContext } from '../context/AppContext'
+
+import ProductBase from "../assets/products_base.avif"
+import data from "../assets/data.json"
+import assets from '../assets/assets'
+
 
 const Products = () => {
   const { isSplashScreenOpen } = useContext(AppDataContext)
@@ -35,37 +37,50 @@ const Products = () => {
   }, [isSplashScreenOpen])
 
   useGSAP(() => {
+    console.log("openPanel", openPanel)
+
     if (openPanel === "description") {
       gsap.to(productDescription.current, {
         height: "auto",
-        ease: "none",
+        ease: "power1.out",
         duration: 0.5,
         opacity: 1,
+      })
+      gsap.to(productAbout.current, {
+        height: 0,
+        duration: 1,
+        ease: "power1.out",
+        opacity: 0,
       })
     } else if (openPanel === "about") {
       gsap.to(productAbout.current, {
         height: "auto",
-        ease: "none",
-        duration: 0.5,
+        ease: "power1.out",
+        duration: 1,
         opacity: 1,
       })
-    } else {
+      gsap.to(productDescription.current, {
+        height: 0,
+        duration: 1,
+        ease: "power1.out",
+        opacity: 0,
+      })
+    } else if (openPanel == "") {
       console.log("clear animatio")
       gsap.to(productDescription.current, {
         height: 0,
-        duration: 0.5,
-        ease: "none",
+        duration: 1,
+        ease: "power1.out",
         opacity: 0,
       })
 
       gsap.to(productAbout.current, {
         height: 0,
         duration: 0.5,
-        ease: "none",
+        ease: "power1.out",
         opacity: 0,
       })
     }
-
   }, [openPanel])
 
   console.log(openPanel)
@@ -75,7 +90,7 @@ const Products = () => {
         <div key={idx}>
           {idx === productIndex && (
             <>
-              <div className=' flex flex-col sm:grid sm:grid-cols-3 gap-y-15 sm:gap-3 items-center mt-12'>
+              <div className=' flex flex-col lg:grid md:grid-cols-3 gap-y-15 md:gap-3 items-center mt-12'>
                 {/* left */}
                 <div className='w-full '>
                   <h2 ref={e => productMainTextRef = e} className='font-medium text-6xl '>
@@ -89,15 +104,41 @@ const Products = () => {
                 </div>
 
                 {/* center */}
-                <div className="items-self-start sm:col-span-1 order-first sm:order-0 h-[60vh] w-[80vw] sm:w-auto -z-1 sm:h-[80vh] sm:max-h-[30rem] ">
+                <div className="relative items-self-start md:col-span-1 order-first lg:order-0 h-[60vh] w-[80vw] md:w-[60vw] lg:w-auto -z-1 md:h-[90vh] lg:h-[80vh] md:max-h-[30rem] ">
                   <div className="w-[90%] h-full  rounded-t-full overflow-hidden justify-self-center border-10 border-b-0 border-secondary-g">
                     <img ref={productBaseImage} className="object-cover w-full h-full scale-[100%]"
                       src={ProductBase} alt="Product Base" />
                   </div>
+
+                  {/* design components-1 */}
+                  <div className="rounded-full w-fit bg-primary-b/10 backdrop-blur p-1.5 flex gap-3 absolute top-[20%] -left-[5%] md:-left-[10%]">
+                    <div>
+                      <img src={assets.productsReviewerImg1} alt="reviewer-1" className='rounded-full h-10 w-10' />
+                    </div>
+
+                    <div className="flex flex-col pe-1">
+                      <h4 className='font-medium text-sm'>Abdul Hamid</h4>
+                      <p className='text-xs text-gray-700'>Fresh and refreshing!!</p>
+                    </div>
+                  </div>
+
+                  {/* design components-2 */}
+                  <div className="rounded-full w-fit bg-primary-b/10 backdrop-blur p-1.5 flex gap-3 absolute top-[80%] -right-[5%] md:-right-[20%] lg:-right-[30%]">
+                    <div className='order-1 md:order-0'>
+                      <img src={assets.productsReviewerImg1} alt="reviewer-1" className='rounded-full h-10 w-10' />
+                    </div>
+
+                    <div className="flex flex-col ps-2 md:pe-1">
+                      <h4 className='font-medium text-sm text-white md:text-black'>Akash Sharma</h4>
+                      <p className='text-xs text-gray-300 md:text-gray-700'>Fresh and refreshing!!</p>
+                    </div>
+                  </div>
+
+
                 </div>
 
                 {/* right */}
-                <div className="w-full sm:w-[80%] mb-10 sm:mb-5 align-self-end">
+                <div className="w-full md:w-[80%] mb-10 md:mb-5 align-self-end">
                   <div className="flex gap-8 mb-8">
                     <i
                       onClick={() => {
@@ -120,7 +161,6 @@ const Products = () => {
 
                   {/* description */}
                   <div>
-
                     <div
                       className={`${openPanel === "description" ? "border-black" : "border-gray-500"} border-b-3 flex justify-between items-center  cursor-pointer pb-1 mb-1`}
                       onClick={() => {
@@ -137,7 +177,7 @@ const Products = () => {
 
                     </div>
 
-                    <div ref={productDescription} className={`overflow-hidden transition-all duration-300 `}>
+                    <div ref={productDescription} className={`overflow-hidden h-0 transition-all duration-300 `}>
                       <p>{product.description}</p>
                     </div>
 
@@ -162,7 +202,7 @@ const Products = () => {
 
                     </div>
 
-                    <div ref={productAbout} className={`overflow-hidden transition-all duration-300 `}>
+                    <div ref={productAbout} className={`overflow-hidden h-0 transition-all duration-300 `}>
                       <p>{product.about}</p>
                     </div>
 
@@ -173,6 +213,7 @@ const Products = () => {
               </div>
             </>
           )}
+
         </div>
         // {/* <div className="overflow-hidden w-[100vw]">
         //   <div className="bg-red-500 absolute -left-16 -z-10 rounded-t-[100%] h-[10rem] w-[110vw]"></div>

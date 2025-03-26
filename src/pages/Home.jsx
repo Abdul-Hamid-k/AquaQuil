@@ -1,6 +1,5 @@
 import React, { useContext, useRef } from 'react'
 import RotatingCircleText from './RotatingCircleText'
-import { waterBottle } from '../assets/assets'
 import data from "../assets/data.json"
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
