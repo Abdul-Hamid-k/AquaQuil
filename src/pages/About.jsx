@@ -1,7 +1,7 @@
 import React from 'react'
 import assets from '../assets/assets'
 import data from '../assets/data.json'
-import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
+import { Circle, GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import { useMemo } from "react";
 
 const About = () => {
@@ -147,18 +147,15 @@ const About = () => {
               <GoogleMap
                 mapContainerStyle={{ width: '100%', height: '100%' }}
                 center={center}
-                zoom={10}
+                zoom={9.5}
                 // onLoad={onLoad}
                 onUnmount={onUnmount}
               >
                 {/* Child components, such as markers, info windows, etc. */}
-                <></>
-                <Marker position={{ lat: 21.826211, lng: 75.614188 }}
-                  icon={"http://maps.google.com/mapfiles/ms/icons/green-dot.png"} />
-
-                {data.dispatchLocation.map(location => (
-                  <Marker position={{ lat: location.lat, lng: location.lang }} />
-                ))}
+                <Circle
+                  radius={18000}
+                  center={{ lat: 21.826211, lng: 75.614188 }}
+                  options={{ strokeColor: "#ff0000" }} />
               </GoogleMap>
             )}
 
