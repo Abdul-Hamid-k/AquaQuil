@@ -25,5 +25,6 @@
 			"reviewerName": "Abdul Hamid",
 			"review": "Fresh and refreshing!!"
 		}
-	]
+	],
+	"dispatchLocation": [{ "lat": 21.9154006, "lang": 75.7428729 }]
 }

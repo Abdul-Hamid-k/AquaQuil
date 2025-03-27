@@ -1,5 +1,6 @@
 import React from 'react'
 import assets from '../assets/assets'
+import data from '../assets/data.json'
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import { useMemo } from "react";
 
@@ -152,9 +153,12 @@ const About = () => {
               >
                 {/* Child components, such as markers, info windows, etc. */}
                 <></>
-                <Marker position={{ lat: 21.826211, lng: 75.614188 }} />
-                <Marker position={{ lat: 21.9154006, lng: 75.7428729 }} />
-                <Marker position={{ lat: 21.9154006, lng: 75.7428729 }} />
+                <Marker position={{ lat: 21.826211, lng: 75.614188 }}
+                  icon={"http://maps.google.com/mapfiles/ms/icons/green-dot.png"} />
+
+                {data.dispatchLocation.map(location => (
+                  <Marker position={{ lat: location.lat, lng: location.lang }} />
+                ))}
               </GoogleMap>
             )}
 
