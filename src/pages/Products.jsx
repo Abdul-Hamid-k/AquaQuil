@@ -85,7 +85,7 @@ const Products = () => {
 
   console.log(openPanel)
   return (
-    <div className="">
+    <div className="max-w-[75rem] mx-auto px-5 sm:px-[3%]">
       {data.products.map((product, idx) => (
         <div key={idx}>
           {idx === productIndex && (
@@ -213,7 +213,7 @@ const Products = () => {
               </div>
             </>
           )}
-          
+
         </div>
         // {/* <div className="overflow-hidden w-[100vw]">
         //   <div className="bg-red-500 absolute -left-16 -z-10 rounded-t-[100%] h-[10rem] w-[110vw]"></div>
