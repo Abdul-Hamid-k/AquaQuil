@@ -1,11 +1,42 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import assets from '../assets/assets'
-import data from '../assets/data.json'
 import { Circle, GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import { useMemo } from "react";
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import { AppDataContext } from '../context/AppContext';
+
+gsap.registerPlugin(ScrollTrigger)
 
 const About = () => {
   const [map, setMap] = React.useState(null)
+  const { isSplashScreenOpen } = useContext(AppDataContext)
+
+  useGSAP(() => {
+    if (!isSplashScreenOpen) {
+      gsap.from("#heading", {
+        opacity: 0,
+        y: 100,
+        duration: 1,
+        delay: 0.3,
+        ease: "bounce.out"
+      })
+
+      gsap.from("#section1", {
+        opacity: 0,
+        x: 100,
+        duration: 1,
+        delay: 3
+        // scrollTrigger: {
+        //   trigger: "#section1",
+        //   start: "top 50%",
+        //   scroller: "body",
+        //   markers: true
+        // }
+      })
+    }
+  }, [isSplashScreenOpen])
 
   const center = useMemo(() => ({
     lat: 21.826211,
@@ -37,7 +68,9 @@ const About = () => {
         {/* TODO: ADD bottles */}
       </div>
       <div className="max-w-[75rem] mx-auto px-5 sm:px-[3%] mt-10">
-        <h2 className='text-3xl font-bolf'>About Us</h2>
+        <div className="overflow-hidden">
+          <h2 id='heading' className='text-3xl font-bolf'>About Us</h2>
+        </div>
 
         {/* founders */}
         <h3 className='mt-3 text-lg text-primary-g font-medium'>Our Founders</h3>
@@ -63,13 +96,13 @@ const About = () => {
         <>
           {/* section1 */}
           <>
-            <h3 className='mt-3 text-lg text-primary-g font-medium'>Pure. Fresh. Naturally Yours.</h3>
-            <p className='mt-3 md:w-[90%]'>At AquaQuill, we believe that water is more than just hydration—it's a source of life, vitality, and well-being. Our journey began with a simple mission: to provide pure, mineral-rich water sourced from nature and bottled with the standards of purity.</p>
+            <h3 id='#section1' className='mt-3 text-lg text-primary-g font-medium'>Pure. Fresh. Naturally Yours.</h3>
+            <p id='#section1-content' className='mt-3 md:w-[90%]'>At AquaQuill, we believe that water is more than just hydration—it's a source of life, vitality, and well-being. Our journey began with a simple mission: to provide pure, mineral-rich water sourced from nature and bottled with the standards of purity.</p>
           </>
 
           {/* section2 */}
           <>
-            <h3 className='mt-5 text-lg text-primary-g font-medium'>Why Choose AquaQuill?</h3>
+            <h3 id='#section2' className='mt-5 text-lg text-primary-g font-medium'>Why Choose AquaQuill?</h3>
             <p className='mt-2 md:w-[90%]'>
               <i className="ri-check-line text-xl text-purple-500 font-bold"></i>
               <span className='font-medium'>100% Natural Mineral Water – </span>
@@ -91,13 +124,13 @@ const About = () => {
 
           {/* section3 */}
           <>
-            <h3 className='mt-5 text-lg text-primary-g font-medium'>Expanding Horizons</h3>
+            <h3 id='#section3' className='mt-5 text-lg text-primary-g font-medium'>Expanding Horizons</h3>
             <p className='mt-3 md:w-[90%]'>Currently, we offer 500ml and 1L bottles of our premium mineral water, perfect for on-the-go hydration. But we’re not stopping there! Soon, we’ll be introducing a range of refreshing carbonated cold drinks in exciting new flavors—crafted to energize and revitalize you with every sip.</p>
           </>
 
           {/* section4 */}
           <>
-            <h3 className='mt-5 text-lg text-primary-g font-medium'>Join the AquaQuill Family</h3>
+            <h3 id='#section4' className='mt-5 text-lg text-primary-g font-medium'>Join the AquaQuill Family</h3>
             <p className='mt-3 md:w-[90%]'>We are more than just a brand; we are a movement towards better hydration, better health, and a better planet. Whether you're staying active, working hard, or simply enjoying a moment of refreshment, AquaQuill is here to quench your thirst with purity and perfection.</p>
 
             <div className="flex justify-center mt-5">
@@ -147,14 +180,16 @@ const About = () => {
               <GoogleMap
                 mapContainerStyle={{ width: '100%', height: '100%' }}
                 center={center}
-                zoom={9.5}
-                // onLoad={onLoad}
+                zoom={7}
+                onLoad={onLoad}
                 onUnmount={onUnmount}
               >
                 {/* Child components, such as markers, info windows, etc. */}
+                <Marker position={{ lat: 21.831497, lng: 75.61068 }} />
                 <Circle
-                  radius={18000}
-                  center={{ lat: 21.826211, lng: 75.614188 }}
+                  zoom={7}
+                  radius={30000}
+                  center={{ lat: 21.831497, lng: 75.61068 }}
                   options={{ strokeColor: "#ff0000" }} />
               </GoogleMap>
             )}
