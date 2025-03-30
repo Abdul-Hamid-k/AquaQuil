@@ -39,8 +39,7 @@ const About = () => {
   }, [isSplashScreenOpen])
 
   const center = useMemo(() => ({
-    lat: 21.826211,
-    lng: 75.614188,
+    lat: 21.831497, lng: 75.61068
   }), [])
 
 
@@ -62,7 +61,7 @@ const About = () => {
   }, [])
 
   return (
-    <div className='mb-10'>
+    <div className='mb-20'>
       <div className="relative w-full">
         <img src={assets.aboutBG} alt="about bg" className='opacity-80 w-full h-[50vh] sm:h-[60vh] object-cover' />
         {/* TODO: ADD bottles */}
@@ -152,7 +151,7 @@ const About = () => {
             <div className="flex flex-col items-center border-[0.01rem] border-zinc-200 py-4 px-10 rounded-xl w-full  sm:w-[18rem] ">
               <i className="ri-phone-fill text-2xl"></i>
               <p className=' text-sm'>Phone</p>
-              <p className='text-sm text-zinc-500 mt-1'>+91-9826-731-934</p>
+              <p className='text-sm text-zinc-500 mt-1'>+91-9826-031-934</p>
               <p className='text-sm text-zinc-500'>+91-9753-022-742</p>
             </div>
 
@@ -180,7 +179,7 @@ const About = () => {
               <GoogleMap
                 mapContainerStyle={{ width: '100%', height: '100%' }}
                 center={center}
-                zoom={7}
+                zoom={9}
                 onLoad={onLoad}
                 onUnmount={onUnmount}
               >

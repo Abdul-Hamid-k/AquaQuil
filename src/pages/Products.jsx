@@ -85,7 +85,7 @@ const Products = () => {
 
   console.log(openPanel)
   return (
-    <div className="max-w-[75rem] mx-auto px-5 sm:px-[3%]">
+    <div className="max-w-[75rem] mx-auto px-5 sm:px-[3%] mb-20">
       {data.products.map((product, idx) => (
         <div key={idx}>
           {idx === productIndex && (
@@ -125,11 +125,11 @@ const Products = () => {
                   {/* design components-2 */}
                   <div className="rounded-full w-fit bg-primary-b/10 backdrop-blur p-1.5 flex gap-3 absolute top-[80%] -right-[5%] md:-right-[20%] lg:-right-[30%]">
                     <div className='order-1 md:order-0'>
-                      <img src={assets.productsReviewerImg1} alt="reviewer-1" className='rounded-full h-10 w-10' />
+                      <img src={assets.review2} alt="reviewer-1" className='rounded-full h-10 w-10' />
                     </div>
 
                     <div className="flex flex-col ps-2 md:pe-1">
-                      <h4 className='font-medium text-sm text-white md:text-black'>Akash Sharma</h4>
+                      <h4 className='font-medium text-sm text-white md:text-black'>Shrinivas Joshi</h4>
                       <p className='text-xs text-gray-300 md:text-gray-700'>Fresh and refreshing!!</p>
                     </div>
                   </div>

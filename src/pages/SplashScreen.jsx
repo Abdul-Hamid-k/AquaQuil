@@ -79,7 +79,9 @@ const SplashScreen = () => {
             onClick={() => setIsSplashScreenOpen(false)} className="bg-primary-g rounded-full h-[10rem] w-[10rem] sm:h-[20rem] sm:w-[20rem]"></div>
 
           <div className="absolute flex overflow-hidden leading-none">
-            <p onClick={() => setIsSplashScreenOpen(false)} ref={e => { textMainRef = e }} className='text-[3.5rem] font-medium select-none sm:text-[10rem] md:text-[11rem] capitalize'>
+            <p onClick={() => setIsSplashScreenOpen(false)}
+              ref={e => { textMainRef = e }}
+              className='text-center text-[3.5rem] font-medium select-none sm:text-[10rem] md:text-[11rem] capitalize'>
               {"ESSENCE".split("").map((char, index) => (
                 <span key={index} className='inline-block'>
                   {char}
