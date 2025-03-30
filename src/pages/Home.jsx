@@ -30,7 +30,7 @@ const Home = () => {
 
   return (
 
-    <div className="max-w-[75rem] mx-auto px-5 sm:px-[3%]">
+    <div className="max-w-[75rem] mx-auto px-5 sm:px-[3%] mb-20">
       <div className="flex flex-col sm:grid sm:grid-cols-2 gap-10 sm:gap-3 h-[calc(100vh-5rem)] items-center">
         <div className="order-1 sm:order-0 -z-2">
           <h2 ref={e => heroTextRef = e} className='text-5xl sm:text-5xl md:text-7xl font-medium font-hero -z-1 overflow-hidden'>
