@@ -20,7 +20,7 @@ const Footer = () => {
         <a href={`https://api.whatsapp.com/send?phone=+919826031934&text=Hello, more information!`}
           target="_blank" rel="noopener noreferrer"
           className="hover:text-primary-g/80 hover:bg-gray-100 px-3 py-2 bg-white text-primary-g rounded-xl no-underline">
-          <i class="ri-whatsapp-line"></i>
+          <i className="ri-whatsapp-line"></i>
         </a>
         <a href="https://www.instagram.com/aziziya_developers/"
           target="_blank" rel="noopener noreferrer"
