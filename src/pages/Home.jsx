@@ -1,6 +1,6 @@
 import React, { useContext, useRef } from 'react'
 import RotatingCircleText from './RotatingCircleText'
-import data from "../assets/data.json"
+import data from "../assets/data.js"
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
