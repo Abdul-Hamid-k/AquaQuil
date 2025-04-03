@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 const Footer = () => {
   return (
-    <footer className="border-t-2 border-primary-g bg-primary-g/80 min-h-48 text-center text-white flex flex-col items-center justify-between py-4">
+    <footer className=" bg-primary-g/80 min-h-48 text-center text-white flex flex-col items-center justify-between py-4">
       {/* Logo */}
       <Link to='/' onClick={() => window.scrollTo(0, 0)}><img src={assets.logo} alt="logo" className='w-[8rem]' /></Link>
 

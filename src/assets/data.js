@@ -1,4 +1,6 @@
-{
+import bottle500ML from './500ml.png'
+
+const data = {
 	"home": {
 		"heroMainText": "Pure Essence of Nature in Every Drop",
 		"heroSubText": "Experience the freshness of crystal-clear, mineral-rich water, sourced from the heart of nature.",
@@ -10,14 +12,16 @@
 			"productName": "500 ML Mineral Water Bottle",
 			"productAbout": "Our 500 ML Mineral Water Bottle is perfect for on-the-go hydration.",
 			"description": "500ML Description",
-			"about": "500ML About"
+			"about": "500ML About",
+			"image": bottle500ML
 		},
 		{
 			"id": "1LWaterBottle",
 			"productName": "1 L Mineral Water Bottle",
 			"productAbout": "Our 500 ML Mineral Water Bottle is perfect for on-the-go hydration.",
 			"description": "1L Description",
-			"about": "1L About"
+			"about": "1L About",
+			// "image": bottle500ML
 		}
 	],
 	"productReviews": [
@@ -28,3 +32,5 @@
 	],
 	"dispatchLocation": [{ "lat": 21.9154006, "lang": 75.7428729 }]
 }
+
+export default data

@@ -5,6 +5,7 @@ import productsReviewerImg1 from './AbdulimgSm.jpg'
 import aboutBG from './about_bg.avif'
 import review2 from './review2.jpg'
 
+
 const assets = {
   logo,
   headerArc,
