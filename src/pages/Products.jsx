@@ -94,14 +94,14 @@ const Products = () => {
   console.log(openPanel)
   return (
     <>
-      <div className="max-w-[75rem] mx-auto px-5 sm:px-[3%] mb-20">
+      <div className="relative max-w-[75rem] flex justify-center items-center mx-auto px-5 sm:px-[3%] mb-20">
         {data.products.map((product, idx) => (
           <div key={idx}>
             {idx === productIndex && (
               <>
-                <div className=' flex flex-col lg:grid md:grid-cols-3 gap-y-15 md:gap-3 items-center mt-12'>
+                <div className=' flex flex-col lg:grid lg:grid-cols-3 gap-y-15 md:gap-12 items-center mt-12'>
                   {/* left */}
-                  <div className='w-full '>
+                  <div className='w-full mt-10 lg:mt-0'>
                     <h2 ref={e => productMainTextRef = e} className='font-medium text-6xl '>
                       {product.productName.split(' ').map((letter, idx) => (
                         <span key={idx} className='inline-block mr-3 -z-10'>{letter}  </span>
@@ -113,39 +113,53 @@ const Products = () => {
                   </div>
 
                   {/* center */}
-                  <div className="relative items-self-start md:col-span-1 order-first lg:order-0 h-[60vh] w-[80vw] md:w-[60vw] lg:w-auto -z-1 md:h-[90vh] lg:h-[80vh] md:max-h-[30rem] ">
-                    <div className="w-[90%] h-full  rounded-t-full overflow-hidden justify-self-center border-10 border-b-0 border-secondary-g">
-                      <img ref={productBaseImage} className="object-cover w-full h-full scale-[400%]"
-                        src={ProductBase} alt="Product Base" />
-                      <div className="absolute overflow-x-hidden -bottom-18 h-full flex items-end justify-center w-[85%]">
-                        <img ref={bottleRef} src={product?.image} alt="Water Bottle" className=' h-[98%] ' />
+                  <div className="relative flex items-center justify-center items-self-start w-full order-first lg:order-0 -z-1 ">
+
+                    <div className="relative  h-[60vh] w-[80vw] md:w-[60vw] lg:w-auto  md:h-[90vh] lg:h-[80vh] md:max-h-[30rem] ">
+                      <div className="w-[90%] h-full  rounded-t-full overflow-hidden justify-self-center border-10 border-b-0 border-secondary-g">
+                        {/* base bg */}
+                        <img ref={productBaseImage} className="object-cover w-full h-full scale-[400%]"
+                          src={ProductBase} alt="Product Base" />
+                        <div className="absolute overflow-x-hidden -bottom-18 h-full flex items-end justify-center w-[85%]">
+                          {/* water bottle */}
+                          <img ref={bottleRef} src={product?.image} alt="Water Bottle" className='h-full sm:h-[98%] ' />
+                        </div>
                       </div>
+
+
+
+                      {/* design components-1 */}
+                      <div className="rounded-full w-fit bg-primary-b/10 backdrop-blur p-1.5 flex gap-3 absolute top-[20%] -left-[5%] md:-left-[10%]">
+                        <div>
+                          <img src={assets.productsReviewerImg1} alt="reviewer-1" className='rounded-full h-10 w-10' />
+                        </div>
+
+                        <div className="flex flex-col pe-1">
+                          <h4 className='font-medium text-sm'>Abdul Hamid</h4>
+                          <p className='text-xs text-gray-700'>Fresh and refreshing!!</p>
+                        </div>
+                      </div>
+
+                      {/* design components-2 */}
+                      <div className="rounded-full w-fit bg-primary-b/10 backdrop-blur p-1.5 flex gap-3 absolute top-[80%] -right-[5%] md:-right-[20%] lg:-right-[30%]">
+                        <div className='order-1 md:order-0'>
+                          <img src={assets.review2} alt="reviewer-1" className='rounded-full h-10 w-10' />
+                        </div>
+
+                        <div className="flex flex-col ps-2 md:pe-1">
+                          <h4 className='font-medium text-sm text-white md:text-black'>Shrinivas Joshi</h4>
+                          <p className='text-xs text-gray-300 md:text-gray-700'>Fresh and refreshing!!</p>
+                        </div>
+                      </div>
+
+
                     </div>
 
-                    {/* design components-1 */}
-                    <div className="rounded-full w-fit bg-primary-b/10 backdrop-blur p-1.5 flex gap-3 absolute top-[20%] -left-[5%] md:-left-[10%]">
-                      <div>
-                        <img src={assets.productsReviewerImg1} alt="reviewer-1" className='rounded-full h-10 w-10' />
-                      </div>
-
-                      <div className="flex flex-col pe-1">
-                        <h4 className='font-medium text-sm'>Abdul Hamid</h4>
-                        <p className='text-xs text-gray-700'>Fresh and refreshing!!</p>
+                    {/* bottom green platform */}
+                    <div className="absolute lg:hidden -bottom-19 -z-10 overflow-hidden w-full h-[8rem]">
+                      <div className="ml-[-50%] h-[500px] w-[200%] rounded-t-[100%] bg-primary-g/80">
                       </div>
                     </div>
-
-                    {/* design components-2 */}
-                    <div className="rounded-full w-fit bg-primary-b/10 backdrop-blur p-1.5 flex gap-3 absolute top-[80%] -right-[5%] md:-right-[20%] lg:-right-[30%]">
-                      <div className='order-1 md:order-0'>
-                        <img src={assets.review2} alt="reviewer-1" className='rounded-full h-10 w-10' />
-                      </div>
-
-                      <div className="flex flex-col ps-2 md:pe-1">
-                        <h4 className='font-medium text-sm text-white md:text-black'>Shrinivas Joshi</h4>
-                        <p className='text-xs text-gray-300 md:text-gray-700'>Fresh and refreshing!!</p>
-                      </div>
-                    </div>
-
 
                   </div>
 
@@ -233,8 +247,8 @@ const Products = () => {
         ))}
       </div>
 
-
-      <div className="absolute -bottom-19 -z-10 overflow-hidden w-full h-[8rem]">
+      {/* bottom green platform for lg-screen */}
+      <div className="absolute hidden lg:block top-[34.5rem] -z-10 overflow-hidden w-full h-[8rem]">
         <div className="ml-[-50%] h-[500px] w-[200%] rounded-t-[100%] bg-primary-g/80">
         </div>
       </div>
