@@ -4,7 +4,7 @@ import headerArc from './headerArc.svg'
 import productsReviewerImg1 from './AbdulimgSm.jpg'
 import aboutBG from './about_bg.avif'
 import review2 from './review2.jpg'
-import waterBottle from './500ML.png'
+import waterBottle from './bottle500ml.png'
 
 const assets = {
   logo,
