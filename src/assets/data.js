@@ -1,4 +1,4 @@
-import bottle500ML from './500ml.png'
+import bottle500ML from './bottle500ml.png'
 
 const data = {
 	"home": {

@@ -16,7 +16,7 @@ const RotatingCircleText = () => {
   }, [])
 
   return (
-    <div ref={circleTextRef}>
+    <div ref={circleTextRef} className=''>
       <svg
         viewBox="0 0 100 100"
         className=''

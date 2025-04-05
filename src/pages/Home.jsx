@@ -6,23 +6,31 @@ import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import { AppDataContext } from '../context/AppContext'
 import { Link } from 'react-router'
+import assets from '../assets/assets.js'
 
 gsap.registerPlugin(ScrollTrigger)
 
 
 const Home = () => {
   var heroTextRef = useRef(null)
+  var bottleRef = useRef(null)
   const { isSplashScreenOpen } = useContext(AppDataContext)
 
   useGSAP(() => {
-    const tl = gsap.timeline()
+
     console.log(isSplashScreenOpen)
     if (!isSplashScreenOpen) {
-      tl.from(heroTextRef.childNodes, {
+      gsap.from(heroTextRef.childNodes, {
         y: 100,
         duration: 1.5,
         opacity: 0,
         stagger: 0.3,
+        delay: 0.3,
+      })
+
+      gsap.from(bottleRef.current, {
+        y: 600,
+        duration: 2,
         delay: 0.3,
       })
     }
@@ -50,25 +58,36 @@ const Home = () => {
           </Link>
         </div>
 
-        <div className="select-none -z-10 mx-3 mt-50 md:mt-0">
-          <div className="relative ">
+        <div className="select-none -z-10 mx-3 mt-10 md:mt-0">
+          <div className="relative">
 
-            <div className="absolute z-1 -right-0  md:right-15 -top-15 w-[160px] ">
-              <RotatingCircleText />
-            </div>
+            <div className="">
 
-            <div className="relative">
               {/* <img className='absolute z-10' src={waterBottle} /> */}
 
-              <div className="relative">
-                <img
-                  className='rounded-[208px] h-[60vw] sm:h-[384px] w-[100vw] md:w-[90%] object-cover'
-                  src="https://images.unsplash.com/photo-1607284170102-f09142a2c733?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Hero image" />
+              <div className="relative overflow-hidden rounded-[8rem] sm:rounded-b-[10rem] h-85 xs:h-108 sm:h-130 flex items-end" >
+                <div className="h-auto relative ">
+
+                  <div className="absolute z-10 -right-0  md:right-15 -top-15 w-[160px] ">
+                    <RotatingCircleText />
+                  </div>
+
+                  <img
+                    className='rounded-[13rem] h-[60vw] sm:h-[384px] w-[100vw]  object-cover'
+                    src="https://images.unsplash.com/photo-1607284170102-f09142a2c733?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Hero image" />
+
+                </div>
+
+                <div className="flex overflow-hidden absolute justify-center h-[130%] xs:h-[130%] w-full -bottom-25 sm:-bottom-30">
+                  <img ref={bottleRef} src={assets.waterBottle} alt="water bottle" className='w-fit  ' />
+                </div>
 
 
               </div>
-              <div className="h-[60vw] sm:h-[384px] w-[80vw] sm:w-[90%] border-4 border-primary-g/40 -z-1 rounded-[208px] absolute top-5 -left-3 sm:-left-5"></div>
+
+
+              <div className="h-[60vw] sm:h-[384px] w-[80vw] sm:w-[90%] border-4 border-primary-g/40 -z-1 rounded-[208px] absolute -bottom-5 -left-3 sm:-left-5"></div>
             </div>
 
           </div>
