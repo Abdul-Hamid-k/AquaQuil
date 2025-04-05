@@ -6,6 +6,7 @@
 	--color-primary-g: #adc178;
 	--color-primary-b: #018be1;
 	--font-hero: "Georgia", "Times New Roman", Times, serif;
+	--breakpoint-xs: 29rem;
 }
 
 body {
