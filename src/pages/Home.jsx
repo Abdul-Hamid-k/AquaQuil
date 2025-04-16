@@ -5,8 +5,9 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import { AppDataContext } from '../context/AppContext'
-import { Link } from 'react-router'
+
 import assets from '../assets/assets.js'
+import { useNavigate } from 'react-router'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -15,6 +16,8 @@ const Home = () => {
   var heroTextRef = useRef(null)
   var bottleRef = useRef(null)
   const { isSplashScreenOpen } = useContext(AppDataContext)
+
+  const navigate = useNavigate()
 
   useGSAP(() => {
 
@@ -41,7 +44,7 @@ const Home = () => {
 
     <div className="max-w-[1200px] mx-auto px-5 sm:px-[3%] mb-20">
       <div className="flex flex-col md:grid md:grid-cols-2 gap-10 md:gap-3 min-h-[calc(100vh-80px)] items-center">
-        <div className="order-1 md:order-0 -z-2">
+        <div className="order-1 md:order-0 z-2">
           <h2 ref={e => heroTextRef = e} className='text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-medium font-hero -z-1 overflow-hidden'>
             {data.home.heroMainText.split(' ').map((letter, idx) => (
               <span key={idx} className='inline-block mr-3'>{letter}  </span>
@@ -49,13 +52,17 @@ const Home = () => {
           </h2>
           <p className='mt-4 text-gray-600'>Experience the freshness of crystal-clear, mineral-rich water, sourced from the heart of nature.</p>
           {/* todo */}
-          <Link to='/about'
-            // onClick={() => window.scrollTo(0, 0)}
+          <a
+            onClick={() => {
+              window.scrollTo(0, 0)
+              navigate('/about')
+            }}
             className='px-5 py-2 inline-block rounded-full bg-primary-g text-white mt-5 cursor-pointer'
           >
             Contact Us
             <i className="ri-arrow-right-line"></i>
-          </Link>
+          </a>
+
         </div>
 
         <div className="select-none -z-10 mx-3 mt-10 md:mt-0">

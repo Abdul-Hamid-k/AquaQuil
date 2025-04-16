@@ -76,10 +76,17 @@ const SplashScreen = () => {
         <div className=" z-[10] fixed left-10 h-screen w-screen bg-primary-g"></div>
         <div className='z-[20] h-screen w-screen fixed bg-white flex justify-center items-center'>
           <div ref={bgCircleRef}
-            onClick={() => setIsSplashScreenOpen(false)} className="bg-primary-g rounded-full h-[10rem] w-[10rem] sm:h-[20rem] sm:w-[20rem]"></div>
+            onClick={() => {
+              setIsSplashScreenOpen(false)
+              window.scrollTo(0, 0)
+            }}
+            className="bg-primary-g rounded-full h-[10rem] w-[10rem] sm:h-[20rem] sm:w-[20rem]"></div>
 
           <div className="absolute flex overflow-hidden leading-none">
-            <p onClick={() => setIsSplashScreenOpen(false)}
+            <p onClick={() => {
+              setIsSplashScreenOpen(false)
+              window.scrollTo(0, 0)
+            }}
               ref={e => { textMainRef = e }}
               className='text-center text-[3.5rem] font-medium select-none sm:text-[10rem] md:text-[11rem] capitalize'>
               {"ESSENCE".split("").map((char, index) => (

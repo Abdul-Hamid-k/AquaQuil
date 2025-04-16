@@ -20,20 +20,66 @@ const About = () => {
         y: 100,
         duration: 1,
         delay: 0.3,
-        ease: "bounce.out"
+      })
+
+      gsap.from("#founders", {
+        opacity: 0,
+        y: 100,
+        duration: 0.25,
+        scrollTrigger: {
+          trigger: "#founders",
+          start: "top 90%",
+          end: "top 50%",
+          //markers: true,
+        }
       })
 
       gsap.from("#section1", {
         opacity: 0,
-        x: 100,
-        duration: 1,
-        delay: 3
-        // scrollTrigger: {
-        //   trigger: "#section1",
-        //   start: "top 50%",
-        //   scroller: "body",
-        //   markers: true
-        // }
+        y: 100,
+        duration: 0.25,
+        scrollTrigger: {
+          trigger: "#section1",
+          start: "top 90%",
+          end: "top 50%",
+          //markers: true,
+        }
+      })
+
+      gsap.from("#section2", {
+        opacity: 0,
+        y: 100,
+        duration: 0.25,
+        scrollTrigger: {
+          trigger: "#section2",
+          start: "top 90%",
+          end: "top 50%",
+          //markers: true,
+        }
+      })
+
+      gsap.from("#section3", {
+        opacity: 0,
+        y: 100,
+        duration: 0.25,
+        scrollTrigger: {
+          trigger: "#section3",
+          start: "top 90%",
+          end: "top 50%",
+          //markers: true,
+        }
+      })
+
+      gsap.from("#section4", {
+        opacity: 0,
+        y: 100,
+        duration: 0.25,
+        scrollTrigger: {
+          trigger: "#section4",
+          start: "top 90%",
+          end: "top 50%",
+          //markers: true,
+        }
       })
     }
   }, [isSplashScreenOpen])
@@ -62,9 +108,10 @@ const About = () => {
 
   return (
     <div className='mb-20'>
-      <div className="relative w-full">
+      <div className="relative w-full flex justify-center">
         <img src={assets.aboutBG} alt="about bg" className='opacity-80 w-full h-[50vh] sm:h-[60vh] object-cover' />
         {/* TODO: ADD bottles */}
+        <img src={assets.about_bottle_bg} alt="aout_bottle_bg" className='absolute -bottom-3 h-[95%]' />
       </div>
       <div className="max-w-[75rem] mx-auto px-5 sm:px-[3%] mt-10">
         <div className="overflow-hidden">
@@ -72,7 +119,9 @@ const About = () => {
         </div>
 
         {/* founders */}
-        <h3 className='mt-3 text-lg text-primary-g font-medium'>Our Founders</h3>
+        <div className="overflow-hidden">
+          <h3 id='founders' className='mt-3 text-lg text-primary-g font-medium'>Our Founders</h3>
+        </div>
         <div className="w-full flex flex-col md:flex-row gap-3 mt-3">
           <div className='h-[40vh]  w-full bg-zinc-100 overflow-hidden flex flex-col justify-center items-center rounded-xl'>
             <img src={assets.productsReviewerImg1} alt="co-founder-img"
@@ -95,13 +144,17 @@ const About = () => {
         <>
           {/* section1 */}
           <>
-            <h3 id='#section1' className='mt-3 text-lg text-primary-g font-medium'>Pure. Fresh. Naturally Yours.</h3>
-            <p id='#section1-content' className='mt-3 md:w-[90%]'>At AquaQuill, we believe that water is more than just hydration—it's a source of life, vitality, and well-being. Our journey began with a simple mission: to provide pure, mineral-rich water sourced from nature and bottled with the standards of purity.</p>
+            <div className="overflow-hidden">
+              <h3 id='section1' className='mt-3 block text-lg text-primary-g font-medium'>Pure. Fresh. Naturally Yours.</h3>
+            </div>
+            <p id='section1-content' className='mt-3 md:w-[90%]'>At AquaQuill, we believe that water is more than just hydration—it's a source of life, vitality, and well-being. Our journey began with a simple mission: to provide pure, mineral-rich water sourced from nature and bottled with the standards of purity.</p>
           </>
 
           {/* section2 */}
           <>
-            <h3 id='#section2' className='mt-5 text-lg text-primary-g font-medium'>Why Choose AquaQuill?</h3>
+            <div className="overflow-hidden">
+              <h3 id='section2' className='mt-5 text-lg text-primary-g font-medium'>Why Choose AquaQuill?</h3>
+            </div>
             <p className='mt-2 md:w-[90%]'>
               <i className="ri-check-line text-xl text-purple-500 font-bold"></i>
               <span className='font-medium'>100% Natural Mineral Water – </span>
@@ -123,13 +176,17 @@ const About = () => {
 
           {/* section3 */}
           <>
-            <h3 id='#section3' className='mt-5 text-lg text-primary-g font-medium'>Expanding Horizons</h3>
+            <div className="overflow-hidden">
+              <h3 id='section3' className='mt-5 text-lg text-primary-g font-medium'>Expanding Horizons</h3>
+            </div>
             <p className='mt-3 md:w-[90%]'>Currently, we offer 500ml and 1L bottles of our premium mineral water, perfect for on-the-go hydration. But we’re not stopping there! Soon, we’ll be introducing a range of refreshing carbonated cold drinks in exciting new flavors—crafted to energize and revitalize you with every sip.</p>
           </>
 
           {/* section4 */}
           <>
-            <h3 id='#section4' className='mt-5 text-lg text-primary-g font-medium'>Join the AquaQuill Family</h3>
+            <div className="overflow-hidden">
+              <h3 id='section4' className='mt-5 text-lg text-primary-g font-medium'>Join the AquaQuill Family</h3>
+            </div>
             <p className='mt-3 md:w-[90%]'>We are more than just a brand; we are a movement towards better hydration, better health, and a better planet. Whether you're staying active, working hard, or simply enjoying a moment of refreshment, AquaQuill is here to quench your thirst with purity and perfection.</p>
 
             <div className="flex justify-center mt-5">
@@ -179,14 +236,14 @@ const About = () => {
               <GoogleMap
                 mapContainerStyle={{ width: '100%', height: '100%' }}
                 center={center}
-                zoom={9}
+                zoom={10}
                 onLoad={onLoad}
                 onUnmount={onUnmount}
               >
                 {/* Child components, such as markers, info windows, etc. */}
                 <Marker position={{ lat: 21.831497, lng: 75.61068 }} />
                 <Circle
-                  zoom={7}
+                  zoom={10}
                   radius={30000}
                   center={{ lat: 21.831497, lng: 75.61068 }}
                   options={{ strokeColor: "#ff0000" }} />
